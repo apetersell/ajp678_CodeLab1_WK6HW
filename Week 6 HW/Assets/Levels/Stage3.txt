@@ -6,5 +6,5 @@ X     CCXCC      X
 X     CXCXC      X
 X    CXCCCXC     X
 X   CXCCCCCXC    X
-X   CCCCCCCCC    X
+X   CCCLCCCCC    X
 XXXXXXXXXXXXXXXXXX                

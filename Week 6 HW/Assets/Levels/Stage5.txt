@@ -3,7 +3,7 @@ XX    CCCCCC    XX
 XC    XCCCCX    CX
 XC    XCCCCX    CX
 XC    XCCCCX    CX
-XCC    XCCX    CCX
+XCC    XCCX    LCX
 XXX    XCCX    XXX
 XC     XCCX     CX
 XC    BXCCXG    CX  

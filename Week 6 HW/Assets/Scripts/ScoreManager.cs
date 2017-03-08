@@ -11,6 +11,9 @@ public class ScoreManager : MonoBehaviour {
 	public KeyCode restart;
 	public int pointsToWin; 
 	public bool canReset;
+	public AudioClip ny;
+	public AudioClip frisco;
+	public AudioClip boston; 
 
 	// Use this for initialization
 	void Start () {

@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
 		yVelocity = rb.velocity.y;
 
 		moveSpeed = gshi.windNum;
-		jumpSpeed = gshi.humidNum;
+		jumpSpeed = (gshi.humidNum)/10;
 
 	
 	}
@@ -154,6 +154,21 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			ScoreManager.scoreCard.scorePoints (playerNum);
 			Destroy (touched.gameObject); 
+		}
+
+		if (touched.gameObject.tag == "New York") 
+		{
+			gshi.cityShift ("new york", "ny");
+		}
+
+		if (touched.gameObject.tag == "Frisco") 
+		{
+			gshi.cityShift ("san francisco", "ca");
+		}
+
+		if (touched.gameObject.tag == "Boston") 
+		{
+			gshi.cityShift ("boston", "ma");
 		}
 		
 	}

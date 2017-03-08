@@ -10,6 +10,7 @@ public class StageBuilder : MonoBehaviour {
 	public GameObject galPrefab; 
 	public GameObject blockPrefab;
 	public GameObject coinPrefab;
+	public GameObject[] logos;
 	public string [] fileNames;
 	public static int stageNum = 0; 
 	public float xOffSet;
@@ -82,6 +83,15 @@ public class StageBuilder : MonoBehaviour {
 						yPos + yOffSet);
 
 				}
+
+				if (line [xPos] == 'L') 
+				{
+					int rando = Random.Range (0, 3);
+					GameObject logo = Instantiate (logos [rando]);
+					logo.transform.position = new Vector3 (
+						xPos + xOffSet,
+						yPos + yOffSet);
+				}
 			}
 			yPos--; 
 		}
@@ -99,7 +109,7 @@ public class StageBuilder : MonoBehaviour {
 		{
 			timer = 0;
 			stageNum++; 
-			SceneManager.LoadScene ("Week 5 Game");
+			SceneManager.LoadScene ("Week 6 Game");
 		}
 
 		if (stageNum > 9) 
