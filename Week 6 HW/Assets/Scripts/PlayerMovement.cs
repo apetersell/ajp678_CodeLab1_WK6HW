@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float hoverStop; 
 	public bool grounded;
 	public bool inAir;
+	public float jumpModifier;
 	private bool canJump;
 	public bool canHover;
 	public KeyCode left; 
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 		yVelocity = rb.velocity.y;
 
 		moveSpeed = gshi.windNum;
-		jumpSpeed = (gshi.humidNum)/10;
+		jumpSpeed = (gshi.humidNum)*jumpModifier;
 
 	
 	}

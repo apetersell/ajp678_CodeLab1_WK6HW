@@ -30,7 +30,8 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 	Text tRegion;
 	Text tWind;
 	Text tHumidity;
-	public static GetSpreadSheetInfo thisInfo;  
+	public static GetSpreadSheetInfo thisInfo; 
+	SpriteRenderer sr;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +44,7 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		tRegion = regionText.GetComponent<Text> ();
 		tWind = windText.GetComponent<Text> ();
 		tHumidity = humidText.GetComponent<Text> ();
+		sr = GetComponent<SpriteRenderer> ();
 
 		if (thisInfo == null){  
 			thisInfo = this;   
@@ -92,6 +94,21 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		regionName = newInfo ["query"] ["results"] ["channel"] ["location"] ["region"];
 		windSpeed = newInfo ["query"] ["results"] ["channel"] ["wind"] ["speed"];
 		humidity = newInfo ["query"] ["results"] ["channel"] ["atmosphere"] ["humidity"];
+
+		if (newCity == "new york") 
+		{
+			sr.sprite = ny;
+		}
+
+		if (newCity == "boston") 
+		{
+			sr.sprite = boston;
+		}
+
+		if (newCity == "san francisco") 
+		{
+			sr.sprite = frisco;
+		}
 	}
 		
 
