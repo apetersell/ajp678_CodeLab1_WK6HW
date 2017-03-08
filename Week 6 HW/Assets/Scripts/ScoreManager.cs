@@ -58,7 +58,7 @@ public class ScoreManager : MonoBehaviour {
 			if (Input.GetKeyDown (restart)) 
 			{
 				Debug.Log ("Hit reset.");
-				SceneManager.LoadScene ("Week 5 Game");
+				SceneManager.LoadScene ("Week 6 Game");
 			}
 		}
 	}
