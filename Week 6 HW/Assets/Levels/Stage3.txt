@@ -1,0 +1,10 @@
+﻿X   CCCCCCCCC    X        
+XG  CXCCCCCXC   BX
+XX   CXCCCXC    XX
+X     CXCXC      X
+X     CCXCC      X
+X     CXCXC      X
+X    CXCCCXC     X
+X   CXCCCCCXC    X
+X   CCCCCCCCC    X
+XXXXXXXXXXXXXXXXXX                
