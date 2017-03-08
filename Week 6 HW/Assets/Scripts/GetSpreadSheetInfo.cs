@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
-using System.IO;
 using System.Net;
 using UnityEngine.UI;
+using System;
 
 
 public class GetSpreadSheetInfo : MonoBehaviour {
@@ -15,9 +15,17 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 	public Text cityText;
 	public Text regionText;
 	public Text windText; 
+	public Text humidText;
+	public string cityName;
+	public string regionName;
+	public string windSpeed;
+	public string humidity;
+	public int windNum;
+	public int humidNum;
 	Text tCity;
 	Text tRegion;
 	Text tWind;
+	Text tHumidity;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +33,7 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		tCity = cityText.GetComponent<Text> ();
 		tRegion = regionText.GetComponent<Text> ();
 		tWind = windText.GetComponent<Text> ();
+		tHumidity = humidText.GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
@@ -34,14 +43,19 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		JSONNode info = JSON.Parse (cityInfo);
 
 
-		string cityName = info["query"]["results"]["channel"]["location"]["city"];
-		string regionName = info ["query"] ["results"] ["channel"] ["location"] ["region"];
-		string windSpeed = info ["query"] ["results"] ["channel"] ["wind"] ["speed"];
-		Debug.Log ("Current Wind Speed: " + windSpeed);
+		cityName = info["query"]["results"]["channel"]["location"]["city"];
+		regionName = info ["query"] ["results"] ["channel"] ["location"] ["region"];
+		windSpeed = info ["query"] ["results"] ["channel"] ["wind"] ["speed"];
+		humidity = info ["query"] ["results"] ["channel"] ["atmosphere"] ["humidity"];
+
 
 		tCity.text = cityName;
 		tRegion.text = regionName;
 		tWind.text = windSpeed;
+		tHumidity.text = humidity;
+
+		windNum = Convert.ToInt32 (windSpeed);
+		humidNum = Convert.ToInt32 (humidity);
 	}
 
 
