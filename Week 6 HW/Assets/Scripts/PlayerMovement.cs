@@ -160,16 +160,19 @@ public class PlayerMovement : MonoBehaviour {
 		if (touched.gameObject.tag == "New York") 
 		{
 			gshi.cityShift ("new york", "ny");
+			Destroy (touched.gameObject);
 		}
 
 		if (touched.gameObject.tag == "Frisco") 
 		{
 			gshi.cityShift ("san francisco", "ca");
+			Destroy (touched.gameObject);
 		}
 
 		if (touched.gameObject.tag == "Boston") 
 		{
 			gshi.cityShift ("boston", "ma");
+			Destroy (touched.gameObject); 
 		}
 		
 	}

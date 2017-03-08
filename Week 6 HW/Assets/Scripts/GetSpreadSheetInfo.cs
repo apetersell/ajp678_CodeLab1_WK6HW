@@ -17,6 +17,8 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 	GameObject regionText;
 	GameObject windText; 
 	GameObject humidText;
+	GameObject scoreManager;
+	ScoreManager sm;
 	public static string cityName;
 	public static string regionName;
 	public static string windSpeed;
@@ -45,6 +47,8 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		tWind = windText.GetComponent<Text> ();
 		tHumidity = humidText.GetComponent<Text> ();
 		sr = GetComponent<SpriteRenderer> ();
+		scoreManager = GameObject.Find ("Score Manager");
+		sm = scoreManager.GetComponent<ScoreManager> ();
 
 		if (thisInfo == null){  
 			thisInfo = this;   
@@ -98,16 +102,19 @@ public class GetSpreadSheetInfo : MonoBehaviour {
 		if (newCity == "new york") 
 		{
 			sr.sprite = ny;
+			sm.trackChange (1);
 		}
 
 		if (newCity == "boston") 
 		{
 			sr.sprite = boston;
+			sm.trackChange (2);
 		}
 
 		if (newCity == "san francisco") 
 		{
 			sr.sprite = frisco;
+			sm.trackChange (3);
 		}
 	}
 		

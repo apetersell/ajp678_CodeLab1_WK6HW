@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour {
 	public AudioClip ny;
 	public AudioClip frisco;
 	public AudioClip boston; 
+	AudioSource aud;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,8 @@ public class ScoreManager : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
+		aud = GetComponent<AudioSource> ();
 	}
 		
 	
@@ -70,6 +73,27 @@ public class ScoreManager : MonoBehaviour {
 		if (sentValue == 2) 
 		{
 			guyScore++;
+		}
+	}
+
+	public void trackChange (int sentNum)
+	{
+		if (sentNum == 1) 
+		{
+			aud.clip = ny;
+			aud.Play ();
+		}
+
+		if (sentNum == 2) 
+		{
+			aud.clip = boston;
+			aud.Play ();
+		}
+
+		if (sentNum == 3) 
+		{
+			aud.clip = frisco;
+			aud.Play ();
 		}
 	}
 }
